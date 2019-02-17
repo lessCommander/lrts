@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <router-view/>
-    <home-nav/>
+    <mini-player/>
   </div>
 </template>
 
 <script>
-import HomeNav from './views/HomeNav';
+import MiniPlayer from './views/MiniPlayer';
 
 export default {
   components: {
-    'home-nav': HomeNav
+    'mini-player': MiniPlayer
   }
 }
 </script>

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/fonts/iconfont.css'
+import 'swiper/dist/css/swiper.css';
+// mint-ui
+
 
 Vue.config.productionTip = false
 
