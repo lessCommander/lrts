@@ -1,5 +1,5 @@
 <template>
-    <div class="mini-player">
+    <div class="mini-player" @click="openList">
         <div class="player-icon">
             <div class="icon-wrap">
                 <i class="iconfont icon-kefu"></i>
@@ -10,10 +10,29 @@
         </div>
         <div class="tool-icon">
             <i class="iconfont icon-liebiao"></i>
-            <i class="iconfont icon-mine"></i>
+            <i class="iconfont icon-mine" @click.stop="openPopup"></i>
         </div>
     </div>
 </template>
+<script>
+import { Toast } from 'mint-ui';
+
+export default {
+    name: 'mini-player',
+    methods: {
+        openPopup() {
+            this.$emit('openPopup', true);
+        },
+        openList() {
+            Toast({
+                message: '收听记录为空',
+                position: 'bottom',
+                duration: 2500
+            });
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 .mini-player{
