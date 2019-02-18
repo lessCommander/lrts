@@ -47,56 +47,71 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.verti-banner{
+.verti-banner {
     background-color: #fff;
     overflow: hidden;
-    .vb-body{
+
+    .vb-body {
         width: 100%;
         margin-bottom: 10px;
-        .vb-list{
+
+        .vb-list {
             width: 100%;
             margin-left: 10px;
         }
     }
 }
+
 .vb-list-item {
     width: 95%;
     margin-bottom: 15px;
+
     .vb-list-item-a {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        .bookother-wrap{
-            padding: 5px 10px;
-            h4{
-                color: #333;
-                font-weight: normal;
-            }
-            .desc{
-                margin: 10px 0;
-                font-size: 13px;
-                color: #777;
-            }
-            .author-wrap{
-                color: #aaa;
-                font-size: 12px;
-                .iconfont{
-                    font-size: 10px;
-                    padding: 1px;
-                    color: #fff;
-                    background-color: #ddd;
-                    border-radius: 50%;
-                }
-                .autor{
-                    float: left;
-                }
-                .playnum{
-                    float: right;
-                    font-size: 9px;
-                    padding: 1px;
-                    border: 1px solid #aaa;
-                }
-            }
+        img{
+            flex-grow: 1;
+        }
+    }
+}
+
+.bookother-wrap {
+    padding: 5px 10px;
+
+    h4 {
+        color: #333;
+        font-weight: normal;
+    }
+
+    .desc {
+        margin: 10px 0;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .author-wrap {
+        color: #aaa;
+        font-size: 12px;
+
+        .iconfont {
+            font-size: 10px;
+            padding: 1px;
+            color: #fff;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+
+        .autor {
+            float: left;
+        }
+
+        .playnum {
+            float: right;
+            font-size: 9px;
+            padding: 1px;
+            border: 1px solid #aaa;
+
         }
     }
 }
