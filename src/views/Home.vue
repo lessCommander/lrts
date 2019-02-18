@@ -24,7 +24,7 @@
         </div>
       </div>
       <!-- 主页导航 -->
-      <ul class="nav-list">
+      <ul class="nav-list block-bottom">
         <li class="nav-list-item"
             v-for="(icon, inx) in icons"
             :key="inx"
@@ -37,15 +37,31 @@
       </ul>
       
       <!-- 小编推荐 -->
-      <div>小编推荐</div>
+      <horizontal-banner
+        class="block-bottom"
+        title="小编推荐"
+        :hb-more-to="hbMoreTo"
+        :hb-books="hbBooks"
+      ></horizontal-banner>
+
+      <!-- 有声小说 -->
+      <vertical-banner
+        class="block-bottom"
+        title="有声小说"
+        :vb-more-to="vbMoreTo"
+        :vb-books="vbBooks"
+      ></vertical-banner>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Hairline from '@/components/Hairline.vue'
+import Hairline from '@/components/Hairline'
+import HorizontalBanner from '@/components/children/HorizontalBanner';
+import VerticalBanner from '@/components/children/VerticalBanner';
 import Swiper from 'swiper';
+
 
 export default {
   name: 'home',
@@ -90,11 +106,56 @@ export default {
           to: '/',
           name: '主播'
         }
+      ],
+      hbMoreTo: '/',
+      hbBooks: [
+        {
+          url: require('../assets/images/recommend1.jpg'),
+          name: '奶泡泡学古诗：小学...'
+        },
+        {
+          url: require('../assets/images/recommend2.jpg'),
+          name: '静心：弘一法师的人...'
+        },
+        {
+          url: require('../assets/images/recommend3.jpg'),
+          name: '妖道至尊'
+        },
+        {
+          url: require('../assets/images/recommend4.jpg'),
+          name: '别让情绪失控害了你'
+        }
+      ],
+      vbMoreTo: '/',
+      vbBooks: [
+        {
+          url: require('../assets/images/soundstory1.jpg'),
+          name: '凌天剑尊',
+          desc: '会炼器，能炼丹，懂音律，会做菜。麻麻说，出来混，必须啥都会！',
+          author: '一杯香茗',
+          playnum: '127.0万播放'
+        },
+        {
+          url: require('../assets/images/soundstory2.jpg'),
+          name: '最强医仙混都市',
+          desc: '他是最强医仙，混迹都市，风生水起。他是最强男人，花都逍遥，群芳来袭。',
+          author: '西君',
+          playnum: '133.9万播放'
+        },
+        {
+          url: require('../assets/images/soundstory3.jpg'),
+          name: '王爷求你休了我：妃常闹腾',
+          desc: '她向来人不犯我我不犯人，可南阳王的美妾们一个个抢着被她玩弄鼓掌之间……',
+          author: '叶笙罗',
+          playnum: '16.5万播放'
+        },
       ]
     }
   },
   components: {
-    'hair-line': Hairline
+    'hair-line': Hairline,
+    'horizontal-banner': HorizontalBanner,
+    'vertical-banner': VerticalBanner
   },
   mounted() {
     new Swiper('.swiper-container', {
@@ -132,7 +193,6 @@ export default {
   height: 81px;
   width: 100%;
   background-color: #fff;
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   .nav-list-item{
@@ -161,6 +221,9 @@ export default {
     }
   }
 }
-
+/*每块区域中间空隙*/
+.block-bottom{
+  margin-bottom: 8px;
+}
 </style>
 
