@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view class="app-body"/>
     <mini-player/>
   </div>
 </template>
@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.app-body{
+  margin-bottom: 70px;
+}
 </style>
