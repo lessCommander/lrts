@@ -340,6 +340,23 @@ export default {
       ]
     }
   },
+  methods:{
+    autoSlide(){
+      let swiper = new Swiper('.swiper-container', {
+        autoplay: {
+          delay: 3000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false
+        },
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable :true,
+          type: 'bullets'
+        }
+      });
+    }
+  },
   components: {
     'hair-line': Hairline,
     'horizontal-banner': HorizontalBanner,
@@ -347,14 +364,15 @@ export default {
     'scroll-top': ScrollTop
   },
   mounted() {
-    new Swiper('.swiper-container', {
-      autoplay:true,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets'
-      }
-    })
+    this.$nextTick(function () {
+        this.autoSlide();
+    });
+  },
+  beforeRouteLeave(to,from,next){
+    if(to.name === 'search'){  //隐藏首页底部mini播放器栏
+      this.$store.commit('toggleMp', false);
+    }
+    next();
   }
 }
 </script>
