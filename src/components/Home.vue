@@ -102,16 +102,15 @@
 
       <!-- 底部 -->
       <div class="brand-footer">&copy;懒人听书 粤ICP备13061962号-6</div>
-
-      <!-- 返回顶部 -->
-      <scroll-top></scroll-top>
     </div>
+    <!-- 返回顶部 -->
+    <scroll-top></scroll-top>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Hairline from '@/components/Hairline'
+import Hairline from '@/components/common/Hairline'
 import HorizontalBanner from '@/components/children/HorizontalBanner';
 import VerticalBanner from '@/components/children/VerticalBanner';
 import ScrollTop from '@/components/children/ScrollTop';

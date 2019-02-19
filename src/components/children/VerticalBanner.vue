@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import BannerTitle from '@/components/children/BannerTitle';
+import BannerTitle from '@/components/common/BannerTitle';
 
 export default {
     name: 'VertiBanner',

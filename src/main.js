@@ -7,8 +7,10 @@ import './assets/fonts/iconfont.css'
 import 'swiper/dist/css/swiper.css';
 // mint-ui
 import 'mint-ui/lib/style.css'; 
-import { Popup } from 'mint-ui';
+import { Popup, Navbar, TabItem } from 'mint-ui';
 Vue.component(Popup.name, Popup);
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
 
 Vue.config.productionTip = false;
 

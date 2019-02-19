@@ -3,9 +3,11 @@
     <transition name="fade" mode="out-in">
       <router-view class="app-body" />
     </transition>
+    <!-- 迷你播放器栏 -->
     <transition name="slidedown" mode="out-in">
       <mini-player class="mp" v-show="mpVisible" @openPopup="openPopup" />
     </transition>
+    <!-- 迷你播放器——按钮弹出菜单 -->
     <mt-popup class="popup-wrap" v-model="popupVisible" position="bottom">
       <div class="popup-nav">
         <ul>
@@ -43,7 +45,7 @@
 </template>
 
 <script>
-import MiniPlayer from './views/MiniPlayer';
+import MiniPlayer from './components/children/MiniPlayer';
 import {mapState} from 'vuex';
 
 export default {
