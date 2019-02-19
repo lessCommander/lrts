@@ -44,13 +44,13 @@
 
 <script>
 import MiniPlayer from './views/MiniPlayer';
+import {mapState} from 'vuex';
 
 export default {
   name: 'App',
   data(){
     return {
       popupVisible: false,  //底部弹出菜单
-      mpVisible: true       //mini播放器栏显示|隐藏
     }
   },
   methods:{
@@ -64,12 +64,10 @@ export default {
   components: {
     'mini-player': MiniPlayer
   },
-  watch: {
-    $route(to, from) {
-      if(to.name === 'search'){
-        this.mpVisible = false;
-      }
-    }
+  computed: {
+    ...mapState([
+      'mpVisible'
+    ])
   }
 }
 </script>
@@ -120,7 +118,7 @@ export default {
   transition: opacity .3s;
 }
 .mp{
-  transition: transform .3s;
+  transition: transform .5s;
 }
 .slidedown-enter, .slidedown-leave-to{
   transform: translateY(-100%);

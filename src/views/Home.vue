@@ -367,6 +367,12 @@ export default {
     this.$nextTick(function () {
         this.autoSlide();
     });
+  },
+  beforeRouteLeave(to,from,next){
+    if(to.name === 'search'){  //隐藏首页底部mini播放器栏
+      this.$store.commit('toggleMp', false);
+    }
+    next();
   }
 }
 </script>

@@ -22,6 +22,12 @@ export default {
   },
   components:{
     'hair-line': Hairline
+  },
+  beforeRouteLeave(to,from,next){
+    if(to.name === 'home'){  //显示首页底部mini播放器栏
+      this.$store.commit('toggleMp', true);
+    }
+    next();
   }
 }
 </script>
