@@ -2,9 +2,6 @@
   <div class="boutique">
     <!-- 标题 -->
     <hair-line>
-      <!-- <template slot="hlicon">
-        <i class="iconfont icon-zuojiantou"></i>
-      </template> -->
       <template slot="hltitle">付费精品</template>
     </hair-line>
 
@@ -14,7 +11,7 @@
 </template>
 
 <script>
-import Hairline from './Hairline.vue';
+import Hairline from '@/components/common/Hairline'
 
 export default {
   name: 'Boutique',

@@ -3,34 +3,36 @@
     <transition name="fade" mode="out-in">
       <router-view class="app-body" />
     </transition>
+    <!-- 迷你播放器栏 -->
     <transition name="slidedown" mode="out-in">
       <mini-player class="mp" v-show="mpVisible" @openPopup="openPopup" />
     </transition>
+    <!-- 迷你播放器——按钮弹出菜单 -->
     <mt-popup class="popup-wrap" v-model="popupVisible" position="bottom">
       <div class="popup-nav">
         <ul>
-          <li>
+          <li @click="closePopup">
             <router-link to="/">
               <i class="iconfont icon-warehouse-delivery"></i>
-              <p class="txt">首页</p>
+              <span class="txt">首页</span>
             </router-link>
           </li>
-          <li>
-            <router-link to="/">
+          <li @click="closePopup">
+            <router-link to="/category">
               <i class="iconfont icon-viewgallery"></i>
-              <p class="txt">分类</p>
+              <span class="txt">分类</span>
             </router-link>
           </li>
-          <li>
-            <router-link to="/">
+          <li @click="closePopup">
+            <router-link to="/search">
               <i class="iconfont icon-search"></i>
-              <p class="txt">搜索</p>
+              <span class="txt">搜索</span>
             </router-link>
           </li>
-          <li>
+          <li @click="closePopup">
             <router-link to="/">
               <i class="iconfont icon-account"></i>
-              <p class="txt">我的</p>
+              <span class="txt">我的</span>
             </router-link>
           </li>
         </ul>
@@ -43,7 +45,7 @@
 </template>
 
 <script>
-import MiniPlayer from './views/MiniPlayer';
+import MiniPlayer from './components/children/MiniPlayer';
 import {mapState} from 'vuex';
 
 export default {
@@ -96,6 +98,9 @@ export default {
         color: #333;
         font-size: 28px;
         font-weight: bold;
+      }
+      span.txt{
+        display: block;
       }
     }
   }
