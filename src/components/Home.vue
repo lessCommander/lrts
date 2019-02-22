@@ -141,7 +141,7 @@ export default {
         },
         {
           iconClass: 'icon-fenlei',
-          to: '/',
+          to: '/category',
           name: '分类'
         },
         {

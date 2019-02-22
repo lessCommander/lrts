@@ -48,7 +48,7 @@ export default {
   }
   .hairline-title{
       text-align: center;
-      font-size: 16px;
+      font-size: 18px;
     }
 }
 </style>
